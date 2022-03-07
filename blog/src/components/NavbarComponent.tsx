@@ -8,7 +8,7 @@ export default class NavbarComponent extends React.Component {
         return (
             <Navbar bg="dark" expand="lg" variant="dark" sticky="top">
                 <Container>
-                    <Navbar.Brand href="#home">Maou Shimazu</Navbar.Brand>
+                    <Navbar.Brand href="https://maoushimazu.tk/blog/">Shimazu Blog</Navbar.Brand>
                     <Nav className="ms-auto">
                         <Nav.Link href="#blog">Blog</Nav.Link>
                         <Nav.Link href="#portfolio">Portfolio</Nav.Link>

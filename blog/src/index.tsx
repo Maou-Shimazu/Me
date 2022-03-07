@@ -3,17 +3,32 @@ import * as ReactDOM from "react-dom";
 import Container from 'react-bootstrap/Container'
 import NavbarComponent from './components/NavbarComponent'
 import HeaderComponent from "./components/HeaderComponent"
+import ProgramParser from "./components/programParser"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-ReactDOM.render(
-  <div>
-    <NavbarComponent />
-    <HeaderComponent />
-    <Container>
-      
-    </Container>
-  </div>,
+  if (window.location.pathname === '/') {
+      ReactDOM.render(
+        <div>
+          <NavbarComponent />
+          <HeaderComponent />
+          <Container>
+            
+          </Container>
+        </div>,
 
-  document.getElementById("root")
-);
-//commit
+        document.getElementById("root")
+      );
+  }
+  else if(window.location.pathname === '/pages/program-parser/'){
+    ReactDOM.render(
+      <div>
+        <NavbarComponent />
+        <HeaderComponent />
+        <Container>
+          <ProgramParser />
+        </Container>
+      </div>,
+
+      document.getElementById("root")
+    );
+  }
