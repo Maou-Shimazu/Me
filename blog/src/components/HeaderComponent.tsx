@@ -1,5 +1,5 @@
 import * as React from "react";
-let header = "../../assets/Bg.svg"
+let header = "../../assets/maou.jpg"
 
 export default class HeaderComponent extends React.Component<{}> {
     render() {
