@@ -25,7 +25,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
         <NavbarComponent />
         <HeaderComponent />
         <Container>
-          <ProgramParser />
+            <Container>
+              <ProgramParser />
+            </Container>
         </Container>
       </div>,
 
