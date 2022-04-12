@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#3367D6"/>
+  <link rel="apple-touch-icon" href="/icons-192.png">
+  <link rel="manifest" href="/manifest.json">
+  
+  <meta name="generator" content="Hexo 6.1.0">
+
+  
+    <meta name="description" content="Blog site of Maou Shimazu">
+  
+
+  
+
+  
+    <meta name="author" content="Maou Shimazu">
+  
+
+  
+
+  
+
+  <title>Glfw-and-Glad-Cheetsheet | Maou Shimazu</title>
+
+  
+
+  
+    <link rel="shortcut icon" href="/blog/favicon.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.3/index.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/monokai.css">
+  
+
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+</head>
+<body>
+  <div class="root-container">
+    
+<!-- header container -->
+<header class="header-container post">
+  
+    <div class="post-image" style="background-image: url(https://www.maoushimazu.tk/assets/img/header.jpg)"></div>
+  
+
+  <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/blog/">
+        
+          Maou Shimazu
+        
+      </a>
+    </div>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="navbar-list">
+        
+          <li class="navbar-list-item"><a target="_blank" rel="noopener" href="https://www.maoushimazu.tk">HOME</a></li>
+        
+          <li class="navbar-list-item"><a target="_blank" rel="noopener" href="https://www.maoushimazu.tk/resume/">RESUME</a></li>
+        
+          <li class="navbar-list-item"><a target="_blank" rel="noopener" href="https://www.maoushimazu.tk/#about">ABOUT</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="header-content">
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">Glfw-and-Glad-Cheetsheet</h1>
+          <h2 class="title-sub-wrap">
+            <strong>Maou Shimazu</strong>
+            <span>posted on: </span>
+            <time  class="article-date" datetime="2022-04-12T15:01:28.466Z" itemprop="datePublished">2022-04-12</time>
+          </h2>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/blog/categories/C/">📒 C++</a></li>
+  
+    <li><a href="/blog/categories/C/Graphics/">📒 Graphics</a></li>
+  
+</ul>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/blog/tags/C/">🏷️ C++</a></li>
+  
+</ul>
+        </div>
+      </div>
+    </div>
+  
+
+  
+  
+  
+</header>
+
+    <!-- 文章 -->
+
+<!-- 文章内容 -->
+<div class="body-container">
+  <article class="content-container layout-block post-container">
+    <div class="article-info">
+      
+      
+      
+      
+      <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
+        <h1 id="GLFW-AND-GLAD-CHEATSHEET"><a href="#GLFW-AND-GLAD-CHEATSHEET" class="headerlink" title="GLFW AND GLAD CHEATSHEET"></a>GLFW AND GLAD CHEATSHEET</h1><h2 id="Includes"><a href="#Includes" class="headerlink" title="Includes"></a>Includes</h2><br>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;glad/glad.h&gt;</span> </span><br><span class="hljs-comment">// or &quot;glad/glad.h&quot; if you have it installed locally.</span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;GLFW/glfw3.h&gt;</span> </span><br><span class="hljs-comment">// works with Visual Studio nupengl and instlled glfw on linux</span><br></code></pre></td></tr></table></figure>
+<h4 id="For-Linux-users-compiling-with-GCC-the-following-command-line-options-may-help-you-compile-the-project-lglfw3-lGL-lX11-lpthread-lXrandr-lXi-ldl-Not-correctly-linking-the-corresponding-libraries-will-generate-many-undefined-reference-errors"><a href="#For-Linux-users-compiling-with-GCC-the-following-command-line-options-may-help-you-compile-the-project-lglfw3-lGL-lX11-lpthread-lXrandr-lXi-ldl-Not-correctly-linking-the-corresponding-libraries-will-generate-many-undefined-reference-errors" class="headerlink" title="For Linux users compiling with GCC, the following command line options may help you compile the project: -lglfw3 -lGL -lX11 -lpthread -lXrandr -lXi -ldl. Not correctly linking the corresponding libraries will generate many undefined reference errors."></a>For Linux users compiling with GCC, the following command line options may help you compile the project: -lglfw3 -lGL -lX11 -lpthread -lXrandr -lXi -ldl. Not correctly linking the corresponding libraries will generate many undefined reference errors.</h4><h2 id="Initialize-glfw-in-main"><a href="#Initialize-glfw-in-main" class="headerlink" title="Initialize glfw in main."></a>Initialize glfw in main.</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-type">int</span> argc, <span class="hljs-type">char</span>* argv[])</span></span>&#123;<br>    <span class="hljs-comment">// Initialize GLFW</span><br>    <span class="hljs-built_in">glfwInit</span>();<br>    <span class="hljs-comment">// optional fail handler.</span><br>    <span class="hljs-keyword">if</span>(!<span class="hljs-built_in">glfwInit</span>())&#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;Failed to initialize GLFW&quot;</span> &lt;&lt; std::endl;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="Add-glfw-hints"><a href="#Add-glfw-hints" class="headerlink" title="Add glfw hints"></a>Add glfw hints</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">glfwInit</span>();<br><span class="hljs-built_in">glfwWindowHint</span>(GLFW_CONTEXT_VERSION_MAJOR, <span class="hljs-number">3</span>);<br><span class="hljs-built_in">glfwWindowHint</span>(GLFW_CONTEXT_VERSION_MINOR, <span class="hljs-number">3</span>);<br><span class="hljs-built_in">glfwWindowHint</span>(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); <span class="hljs-comment">// core methods</span><br><span class="hljs-comment">//glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_COMPAT_PROFILE); // backward compatibility</span><br><span class="hljs-comment">// glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="Creating-a-window"><a href="#Creating-a-window" class="headerlink" title="Creating a window"></a>Creating a window</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cpp">GLFWwindow* window = <span class="hljs-built_in">glfwCreateWindow</span>(<span class="hljs-number">900</span>, <span class="hljs-number">700</span>, <span class="hljs-string">&quot;Program Name&quot;</span>, <span class="hljs-literal">NULL</span>, <span class="hljs-literal">NULL</span>); <br><span class="hljs-comment">// takes 5 imputs, width, height, name, full screen /windowed mode, </span><br><span class="hljs-comment">// and window name for shared context;</span><br>    <span class="hljs-keyword">if</span> (window == <span class="hljs-literal">NULL</span>)&#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;GLFW Failed to create window.&quot;</span> &lt;&lt; std::endl;<br>        <span class="hljs-built_in">glfwTerminate</span>();<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>    &#125;<br>    <span class="hljs-built_in">glfwMakeContextCurrent</span>(window); <span class="hljs-comment">// Creates a window and its </span><br>    <span class="hljs-comment">// associated context</span><br></code></pre></td></tr></table></figure>
+<h4 id="At-the-eof-when-we-are-done-with-the-windows-we-want-to-delete-it"><a href="#At-the-eof-when-we-are-done-with-the-windows-we-want-to-delete-it" class="headerlink" title="At the eof when we are done with the windows we want to delete it."></a>At the eof when we are done with the windows we want to delete it.</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">glfwDestroyWindow</span>();<br><span class="hljs-built_in">glfwTerminate</span>();<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br></code></pre></td></tr></table></figure>
+
+<h2 id="Main-Loop"><a href="#Main-Loop" class="headerlink" title="Main Loop"></a>Main Loop</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">glfwMakeContextCurrent</span>(window);<br><br><span class="hljs-keyword">while</span>(!<span class="hljs-built_in">glfwWindowShouldClose</span>(window))&#123; <br>    <span class="hljs-comment">// while window should stay open</span><br>    <span class="hljs-built_in">glfwPollEvents</span>(); <br>    <span class="hljs-comment">// process events that happen in window</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<details>
+
+<summary> At this stage, if you compile your program you will get a blank window. If you got stuck anywhere, click to the full code for the program.</summary>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;glad/glad.h&gt;</span> </span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;GLFW/glfw3.h&gt;</span> </span><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-type">int</span> argc, <span class="hljs-type">char</span>* argv[])</span></span>&#123;<br>    <span class="hljs-built_in">glfwInit</span>();<br>    <span class="hljs-keyword">if</span>(!<span class="hljs-built_in">glfwInit</span>())&#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;Failed to initialize GLFW&quot;</span> &lt;&lt; std::endl;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>    &#125;<br>    <span class="hljs-built_in">glfwWindowHint</span>(GLFW_CONTEXT_VERSION_MAJOR, <span class="hljs-number">3</span>);<br>    <span class="hljs-built_in">glfwWindowHint</span>(GLFW_CONTEXT_VERSION_MINOR, <span class="hljs-number">3</span>);<br>    <span class="hljs-built_in">glfwWindowHint</span>(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);<br><br>    GLFWwindow* window = <span class="hljs-built_in">glfwCreateWindow</span>(<span class="hljs-number">900</span>, <span class="hljs-number">700</span>, <span class="hljs-string">&quot;Program Name&quot;</span>, <span class="hljs-literal">NULL</span>, <span class="hljs-literal">NULL</span>);<br>    <span class="hljs-keyword">if</span> (window == <span class="hljs-literal">NULL</span>)&#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;GLFW Failed to create window.&quot;</span> &lt;&lt; std::endl;<br>        <span class="hljs-built_in">glfwTerminate</span>();<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>    &#125;<br>    <span class="hljs-built_in">glfwMakeContextCurrent</span>(window);<br><br>    <span class="hljs-keyword">while</span>(!<span class="hljs-built_in">glfwWindowShouldClose</span>(window))&#123;<br>        <span class="hljs-built_in">glfwPollEvents</span>();<br>    &#125;<br><br>    <span class="hljs-built_in">glfwDestroyWindow</span>();<br>    <span class="hljs-built_in">glfwTerminate</span>();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+</details>
+
+<h2 id="Loading-GLAD"><a href="#Loading-GLAD" class="headerlink" title="Loading GLAD"></a>Loading GLAD</h2><h4 id="Glad-is-loaded-after-creaing-the-window-context"><a href="#Glad-is-loaded-after-creaing-the-window-context" class="headerlink" title="Glad is loaded after creaing the window context."></a>Glad is loaded after creaing the window context.</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">glfwMakeContextCurrent</span>(window);<br><br><span class="hljs-built_in">gladLoadGL</span>();<br><br><span class="hljs-built_in">glViewport</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">800</span>, <span class="hljs-number">800</span>); <br><span class="hljs-comment">// bottom left, bottom right, top left, top right;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="Adding-color"><a href="#Adding-color" class="headerlink" title="Adding color"></a>Adding color</h3><h4 id="Clearing-the-buffer-and-writing-a-color-to-it"><a href="#Clearing-the-buffer-and-writing-a-color-to-it" class="headerlink" title="Clearing the buffer and writing a color to it."></a>Clearing the buffer and writing a color to it.</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">glViewport</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">800</span>, <span class="hljs-number">800</span>);<br><br><span class="hljs-built_in">glClearColor</span>(<span class="hljs-number">0.07f</span>, <span class="hljs-number">0.13f</span>, <span class="hljs-number">0.17f</span>, <span class="hljs-number">1.0f</span>); <br><span class="hljs-comment">// decimal rgb and alpha which dictates transparency. </span><br><span class="hljs-comment">// 1 = opaque, 0 = transparent;</span><br><span class="hljs-built_in">glClear</span>(CL_COLOR_BUFFER_BIT);<br><span class="hljs-built_in">glfwSwapBuffers</span>(window);<br></code></pre></td></tr></table></figure>
+
+<h2 id="GLSL-shaders"><a href="#GLSL-shaders" class="headerlink" title="GLSL shaders."></a>GLSL shaders.</h2><h4 id="GLSL-language-looks-much-like-C-and-is-normally-stored-in-a-const-char-pointer-as-a-shader-source"><a href="#GLSL-language-looks-much-like-C-and-is-normally-stored-in-a-const-char-pointer-as-a-shader-source" class="headerlink" title="GLSL language looks much like C and is normally stored in a const char pointer as a shader source"></a>GLSL language looks much like C and is normally stored in a const char pointer as a shader source</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-type">const</span> <span class="hljs-type">char</span>* vertexShaderSource = <span class="hljs-string">&quot;#version 330 core\n&quot;</span><br><span class="hljs-string">&quot;layout (location = 0) in vec3 aPos;\n&quot;</span><br><span class="hljs-string">&quot;void main()\n&quot;</span><br><span class="hljs-string">&quot;&#123;\n&quot;</span><br><span class="hljs-string">&quot;   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n&quot;</span><br><span class="hljs-string">&quot;&#125;\n\0&quot;</span>;<br><br><span class="hljs-type">const</span> <span class="hljs-type">char</span>* fragmentShaderSource = <span class="hljs-string">&quot;#version 330 core\n&quot;</span><br><span class="hljs-string">&quot;out vec4 FragColor;\n&quot;</span><br><span class="hljs-string">&quot;void main()\n&quot;</span><br><span class="hljs-string">&quot;&#123;\n&quot;</span><br><span class="hljs-string">&quot;   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n&quot;</span><br><span class="hljs-string">&quot;&#125;\n\0&quot;</span>;<br></code></pre></td></tr></table></figure>
+<h4 id="When-working-with-2d-you-ignore-the-z-axis-The-x-and-y-axis-origin-is-located-in-the-middle-of-the-window-0-0-With-X-pointing-to-the-right-and-Y-pointing-up-The-left-most-and-lower-most-part-of-part-of-the-window-is-at-1-and-the-right-most-and-uppper-most-part-of-the-window-is-at-1"><a href="#When-working-with-2d-you-ignore-the-z-axis-The-x-and-y-axis-origin-is-located-in-the-middle-of-the-window-0-0-With-X-pointing-to-the-right-and-Y-pointing-up-The-left-most-and-lower-most-part-of-part-of-the-window-is-at-1-and-the-right-most-and-uppper-most-part-of-the-window-is-at-1" class="headerlink" title="When working with 2d you ignore the z axis. The x and y axis origin is located in the middle of the window (0, 0) With X pointing to the right and Y pointing up. The left-most and lower most part of part of the window is at  -1 and the right most and uppper most part of the window is at +1."></a>When working with 2d you ignore the z axis. The x and y axis origin is located in the middle of the window (0, 0) With X pointing to the right and Y pointing up. The left-most and lower most part of part of the window is at  -1 and the right most and uppper most part of the window is at +1.</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-built_in">glfwWindowHint</span>(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);<br><br>GLfloat verticies[] = &#123;<br>    <span class="hljs-number">-0.5f</span>, <span class="hljs-number">-0.5f</span>, <span class="hljs-number">0.0f</span>,<br>     <span class="hljs-number">0.5f</span>, <span class="hljs-number">-0.5f</span>, <span class="hljs-number">0.0f</span>,<br>     <span class="hljs-number">0.0f</span>,  <span class="hljs-number">0.5f</span>, <span class="hljs-number">0.0f</span><br>&#125;;<br><br>GLFWWindow* window = <span class="hljs-built_in">glfwCreateWindow</span>(<span class="hljs-number">900</span>, <span class="hljs-number">700</span>, <span class="hljs-string">&quot;Program Name&quot;</span>, <span class="hljs-literal">NULL</span>, <span class="hljs-literal">NULL</span>);<br></code></pre></td></tr></table></figure>
+      </section>
+
+      
+      
+
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+
+  
+  
+
+
+      </section>
+    </div>
+    <div class="widget-info">
+      <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-body">
+    
+      <img src="https://www.maoushimazu.tk/assets/img/yoru.jpg" class="soft-size--round soft-style--box" alt="Maou Shimazu">
+    
+    
+      <h2>Maou Shimazu</h2>
+    
+    
+      <p>Stay Lean and Code.</p>
+    
+
+    <div class="count-box">
+      <div class="count-box--item">
+        <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
+</svg>
+        <span>1</span>
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+        2
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+        1
+      </div>
+    </div>
+  </div>
+</section>
+
+      
+
+      
+<section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-notice" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M512 945.02305225v28.15620663a24.27259221 24.27259221 0 0 1-24.27259221 24.27259335H394.0352a48.54518557 48.54518557 0 0 1-41.74885888-23.78714112l-110.68302222-184.47170332a132.04290333 132.04290333 0 0 1-17.47626667-48.54518557h118.4502511a200.97706667 200.97706667 0 0 1 76.21594113 14.56355556l20.38897777 133.49925888a48.54518557 48.54518557 0 0 0 36.40888888 27.67075555l16.01991111 2.91271112a24.27259221 24.27259221 0 0 1 20.38897778 25.72894889zM997.45185223 463.45481443a194.18074112 194.18074112 0 0 1-38.8361489 116.50844445 24.75804445 24.75804445 0 0 1-36.4088889 0l-34.95253333-34.95253333a24.27259221 24.27259221 0 0 1-2.91271111-30.58346667 97.09036999 97.09036999 0 0 0 0-106.79940665 24.27259221 24.27259221 0 0 1 2.91271111-30.58346666l34.95253333-34.95253334a24.75804445 24.75804445 0 0 1 18.93262223-7.28177777 26.2144 26.2144 0 0 1 17.47626667 9.70903665A194.18074112 194.18074112 0 0 1 997.45185223 463.45481443z m-194.18074112-388.36148111v776.72296335a48.54518557 48.54518557 0 0 1-48.54518556 48.54518443h-28.64165888a48.54518557 48.54518557 0 0 1-33.98163001-14.07810332l-145.63555556-143.20829668A291.27111111 291.27111111 0 0 0 342.57730333 657.63555556H172.18370333a145.63555556 145.63555556 0 0 1-145.63555556-145.63555556v-97.09036999a145.63555556 145.63555556 0 0 1 145.63555556-145.63555556h170.3936a291.27111111 291.27111111 0 0 0 206.31703779-85.43952668l145.63555555-143.20829554a48.54518557 48.54518557 0 0 1 33.98162888-14.07810446H754.72592555a48.54518557 48.54518557 0 0 1 48.54518556 48.54518555z" fill="currentColor"></path>
+</svg>
+    <span>NOTICE</span>
+  </div>
+  <div class="widget-body">
+    <p>My Github https://github.com/Maou-Shimazu</p>
+  </div>
+</section>
+
+
+      <section class="widget-categorys widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+    <span>CATEGORYS</span>
+  </div>
+  <div class="widget-body">
+    <ul class="categorys-list">
+      
+        <li class="categorys-list-item">
+          <a href="/blog/categories/C/">
+            C++ (1)
+          </a>
+        </li>
+      
+        <li class="categorys-list-item">
+          <a href="/blog/categories/C/Graphics/">
+            Graphics (1)
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</section>
+
+      <section class="widget-tags widget-item  layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+    <span>TAGS</span>
+  </div>
+  <div class="widget-body">
+    <div class="tags-cloud">
+      <a href="/blog/tags/C/" style="font-size: 10px;" class="tags-cloud-0">C++</a>
+    </div>
+  </div>
+</section>
+    </div>
+  </article>
+</div>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    
+    <div class="social-icons">
+      
+        
+          <a href="https://github.com/Maou-Shimazu/" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-github" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M64.6 512c0 195.6 125.4 361.9 300.1 422.9 23.5 5.9 19.9-10.8 19.9-22.2v-77.6c-135.8 15.9-141.3-74-150.5-89-18.5-31.5-61.9-39.5-49-54.5 31-15.9 62.5 4 98.9 58 26.4 39.1 77.9 32.5 104.1 26 5.7-23.5 17.9-44.5 34.7-60.9-140.7-25.2-199.4-111.1-199.4-213.3 0-49.5 16.4-95.1 48.4-131.8-20.4-60.6 1.9-112.4 4.9-120.1 58.2-5.2 118.5 41.6 123.3 45.3 33.1-8.9 70.8-13.7 112.9-13.7 42.4 0 80.3 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.4-43.9 2.9 7.7 24.7 58.3 5.5 118.1 32.5 36.8 49 82.8 49 132.4 0 102.3-59 188.3-200.2 213.2 23.5 23.3 38.1 55.5 38.1 91.1v112.7c0.8 9 0 17.9 15.1 17.9C832.7 877 960.4 709.4 960.4 512.1c0-247.5-200.6-447.9-447.9-447.9C265 64.1 64.6 264.5 64.6 512z"></path>
+</svg>
+          </a>
+        
+      
+    </div>
+     
+    <p>&copy; 2022 <a href="/" target="_blank">Maou Shimazu</a></p>
+
+    
+
+    <p>
+      <a href="javascript:;" id="theme-light">🌞 Light</a>
+      <a href="javascript:;" id="theme-dark">🌛 Dark</a>
+      <a href="javascript:;" id="theme-auto">🤖️ System</a>
+    </p>
+  </div>
+</footer>
+  </div>
+
+  <div class="back-to-top-fixed soft-size--round soft-style--box">
+    <svg class="icon icon-back-to-top" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path d="M725.333333 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8l-213.333333-213.333333c-17.066667-17.066667-17.066667-42.666667 0-59.733333s42.666667-17.066667 59.733333 0l213.333333 213.333333c17.066667 17.066667 17.066667 42.666667 0 59.733333C746.666667 422.4 738.133333 426.666667 725.333333 426.666667z"></path>
+      <path d="M298.666667 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8-17.066667-17.066667-17.066667-42.666667 0-59.733333l213.333333-213.333333c17.066667-17.066667 42.666667-17.066667 59.733333 0s17.066667 42.666667 0 59.733333l-213.333333 213.333333C320 422.4 311.466667 426.666667 298.666667 426.666667z"></path>
+      <path d="M512 896c-25.6 0-42.666667-17.066667-42.666667-42.666667L469.333333 170.666667c0-25.6 17.066667-42.666667 42.666667-42.666667s42.666667 17.066667 42.666667 42.666667l0 682.666667C554.666667 878.933333 537.6 896 512 896z"></path>
+    </svg>
+  </div>
+
+  
+  <!-- aplayer -->
+
+
+<!-- dplayer -->
+
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+  
+  <!-- 尾部用户自定义相关内容 -->
+</body>
+</html>
