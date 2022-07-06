@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<link rel="icon" href="MS.png" style="border-radius: 50%" type="image/png">
+<title>Eldad Danaladi's Resume</title>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+</style>
+<body class="w3-light-blue">
+
+
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+
+    <!-- Left Column -->
+    <div class="w3-third">
+
+      <div class="w3-light-gray w3-text-black w3-card-4">
+        <div class="w3-display-container">
+          <img src="Eldad.jpg" style="width:100%" alt="Avatar">
+          <div class="w3-display-bottomleft w3-container w3-text-amber">
+            <h2>Eldad Danladi</h2>
+          </div>
+        </div>
+        <div class="w3-container">
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i> Web Developer</p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Belmopan, Belize</p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>eldaddanladi@gmail.com</p>
+          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>(+501) 625-1293</p>
+          <hr>
+
+          <p class="w3-large w3-text-blue"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
+          <p>Web Development</p>
+          <div class="w3-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-indigo" style="width:75%">75%</div>
+          </div>
+          <p>Proficiency in C++</p>
+          <div class="w3-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-indigo" style="width:85%">
+              <div class="w3-center w3-text-white">85%</div>
+            </div>
+          </div>
+          <p>App Development</p>
+          <div class="w3-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-indigo" style="width:40%">40%</div>
+          </div>
+          <p>Python</p>
+          <div class="w3-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-indigo" style="width:70%">70%</div>
+          </div>
+          <br>
+          <!--projects-->
+          <p class="w3-large w3-text-blue w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Projects </b></p>
+          <p>FOC Website</p>
+          <a href="https://foc.netlify.app/" target="_blank" class="w3-button w3-white w3-border w3-border-red w3-round-large w3-padding-small">FOC</a>
+
+          <p>Dev Power Website</p>
+          <a href="https://maou-shimazu.github.io/dev-power/" target="_blank" class="w3-button w3-white w3-border w3-border-red w3-round-large w3-padding-small">Dev Power</a>
+
+          <p>Javascript Memory Game</p>
+          <a href="https://maou-shimazu.github.io/Memory-Game/" target="_blank" class="w3-button w3-white w3-border w3-border-red w3-round-large w3-padding-small w3-margin-bottom">Memory Game</a>
+
+          <p>Web Calculators</p>
+          <a href="https://maou-shimazu.github.io/calculators/" target="_blank" class="w3-button w3-white w3-border w3-border-red w3-round-large w3-padding-small w3-margin-bottom">BMI Calculator</a>
+          <br>
+        </div>
+      </div><br>
+
+    <!-- End Left Column -->
+    </div>
+
+    <!-- Right Column -->
+    <div class="w3-twothird">
+
+      <div class="w3-container w3-card w3-light-grey w3-margin-bottom">
+        <h2 class="w3-text-blue w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Development Progress</h2>
+        <div class="w3-container">
+          <h5 class=" w3-text-purple w3-opacity"><b>Web Developer</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>August 2021 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
+          <p>I am an intermediate web developer mostly focused on front end. The main tools that I work with are Html/Css/Javascript, PHP, Vue.js and React.js. I aspire to continue to learn and raise my skill in web development.</p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-text-purple w3-opacity"><b>App Developer</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>October 2021 - <span class="w3-tag w3-teal w3-round">Current</h6>
+          <p>I have only just begun with app development but I am passionate to continue to learn whatever tools and concepts that are able to help me. The tools I have encountered so far are NW.js, Winforms, GTK, wxWidgets and Tkinter.</p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-text-purple w3-opacity"><b>Certificates</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>August 2021 - <span class="w3-tag w3-teal w3-round">Current</h6>
+          <p>This is a collection of certificates of completion from online courses I took in learning the different skills that I have aquired:
+          </p><br>
+        </div>
+      </div>
+
+      <div class="w3-container w3-card w3-light-grey">
+        <h2 class="w3-text-blue w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
+        <div class="w3-container">
+          <h5 class="w3-opacity w3-text-purple"><b>United Evergreen</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2014 - 2016</h6>
+          <p>I attended United Evergreen Primary School and aquired my primary school diploma.</p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity w3-text-purple"><b>Cayo Christian Academy </b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2016 - 2021</h6>
+          <p>I graduated from Cayo Christian Academy with my highschool diploma</p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h5 class="w3-opacity w3-text-purple"><b>University Of Belize </b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2021 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
+          <p>I begun my major in computer science and I am aiming for my Associates Degree in Programming.</p><br>
+        </div>
+      </div>
+
+    <!-- End Right Column -->
+    </div>
+
+  <!-- End Grid -->
+  </div>
+
+  <!-- End Page Container -->
+</div>
+
+<footer class="w3-container w3-cyan w3-center w3-margin-top w3-large">
+  <p>Find me on social media.</p>
+
+  <a href="https://www.instagram.com/maou.shimazu/" target="_blank"><i class="w3-large fa fa-instagram w3-hover-opacity "></i></a>
+
+  <a href="https://www.pinterest.com/xsxmidnightxsx/_saved/"target="_blank"><i class="w3-large fa fa-pinterest-p w3-hover-opacity "></i></a>
+
+  <a href="https://github.com/Maou-Shimazu/"target="_blank"><i class="w3-large fa fa-github w3-hover-opacity "></i></a>
+
+  <!--Website created by Maou Shimazu-->
+</footer>
+
+</footer>
+
+</body>
+</html>
